@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REDLOG — Field notes from the red team</title>
+<meta name="description" content="REDLOG is a research blog covering AI, automation, and offensive security — field notes from people who break things for a living.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-bar" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark">&gt;_</span>
+      <span class="brand-text">REDLOG</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#articles">Articles</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#certs">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#subscribe" class="btn btn-primary nav-cta">Subscribe</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+
+    <div class="hero-head">
+      <p class="terminal-hint"><span class="th-prompt">kali@kali</span><span class="th-sep">:</span><span class="th-path">~</span><span class="th-dollar">$</span> cat featured.md<span class="th-cursor" aria-hidden="true"></span></p>
+      <span class="pill pill-outline">INSIGHTS</span>
+    </div>
+
+    <h1 class="hero-title">
+      How AI Is Changing
+      <span class="accent-line">Penetration Testing</span>
+      in 2026
+    </h1>
+
+    <p class="hero-lede">
+      Autonomous agents are already running recon and drafting findings for real
+      engagements. We spent three months red-teaming the tools themselves — here's
+      what's actually production-ready, and what's still theater.
+    </p>
+
+    <div class="hero-meta">
+      <span class="avatar">AK</span>
+      <span class="meta-name">Avery Kane</span>
+      <span class="meta-sep">·</span>
+      <span>Aug 24, 2026</span>
+      <span class="meta-sep">·</span>
+      <span>9 min read</span>
+    </div>
+
+    <!-- Recreated demo graphic: static, no live typing -->
+    <div class="demo-cluster">
+      <div class="demo-terminal">
+        <div class="demo-terminal-bar">
+          <span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span>
+          <span class="demo-terminal-title">reconpilot agent — web-tester</span>
+        </div>
+        <div class="demo-terminal-body">
+          <p><span class="dt-prompt">$</span> reconpilot agent --type web-tester</p>
+          <p class="dt-agent">Agent: Web application tester initialized</p>
+          <p class="dt-you">You: Test /api/users for SQL injection</p>
+          <p class="dt-agent">Agent: Running recon, mapping input vectors&hellip;</p>
+          <p><span class="dt-prompt">$</span> sqlmap -u target.com/api/users --batch --level=3</p>
+          <p class="dt-result">+ Found: time-based blind SQLi in param <code>id</code></p>
+          <p class="dt-result">+ Finding created: SQL Injection (High) &nbsp; CVSS 8.6</p>
+          <p class="dt-caret" aria-hidden="true">_</p>
+        </div>
+      </div>
+
+      <div class="demo-side">
+        <div class="finding-card">
+          <p class="finding-label">NEW FINDING</p>
+          <h3>SQL Injection</h3>
+          <p class="finding-endpoint">POST /api/auth</p>
+          <div class="finding-pills">
+            <span class="pill pill-high">HIGH</span>
+            <span class="pill pill-cvss">CVSS 8.6</span>
+          </div>
+        </div>
+
+        <div class="stats-card">
+          <p class="stats-label">ENGAGEMENT STATS</p>
+          <div class="stat-row">
+            <div class="stat-row-top"><span>Recon coverage</span><span class="stat-val">94%</span></div>
+            <div class="bar"><div class="bar-fill bar-green" style="width:94%"></div></div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-row-top"><span>Time saved vs manual</span><span class="stat-val stat-amber">35%</span></div>
+            <div class="bar"><div class="bar-fill bar-amber" style="width:35%"></div></div>
+          </div>
+          <div class="stat-row stat-row-plain">
+            <span>Findings auto-logged</span><span class="stat-val">12</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="demo-watermark">REDLOG.IO</p>
+  </div>
+</section>
+
+<!-- ============ TOPIC FILTER ============ -->
+<section class="topics" id="topics">
+  <div class="topics-inner">
+    <button class="topic-pill active" data-topic="all">All</button>
+    <button class="topic-pill" data-topic="ai">AI &amp; Automation</button>
+    <button class="topic-pill" data-topic="web">Web AppSec</button>
+    <button class="topic-pill" data-topic="redteam">Red Team</button>
+    <button class="topic-pill" data-topic="cloud">Cloud</button>
+    <button class="topic-pill" data-topic="tools">Tools</button>
+  </div>
+</section>
+
+<!-- ============ ARTICLE GRID ============ -->
+<section class="articles" id="articles">
+  <div class="articles-inner">
+
+    <article class="article-card" data-topic="ai">
+      <p class="article-tag">AI &amp; Automation</p>
+      <h3>Grading five autonomous pentest agents against a real scope</h3>
+      <p class="article-excerpt">We gave each agent the same rules of engagement and the same 48 hours. Only two produced findings a human would sign off on.</p>
+      <div class="article-meta">
+        <span>Aug 21, 2026</span><span class="meta-sep">·</span><span>11 min</span>
+      </div>
+      <a href="#" class="article-link"><span class="al-prompt">$</span> read article</a>
+    </article>
+
+    <article class="article-card" data-topic="web">
+      <p class="article-tag">Web AppSec</p>
+      <h3>Auth bypass chains are getting harder to fuzz for</h3>
+      <p class="article-excerpt">Modern session handling breaks most of the assumptions our old Burp macros relied on. A field guide to the new failure modes.</p>
+      <div class="article-meta">
+        <span>Aug 18, 2026</span><span class="meta-sep">·</span><span>7 min</span>
+      </div>
+      <a href="#" class="article-link"><span class="al-prompt">$</span> read article</a>
+    </article>
+
+    <article class="article-card" data-topic="redteam">
+      <p class="article-tag">Red Team</p>
+      <h3>What actually gets you caught in a mature SOC</h3>
+      <p class="article-excerpt">Twenty internal engagements, the same three mistakes. Notes on the detections that keep working long after the technique is "public."</p>
+      <div class="article-meta">
+        <span>Aug 14, 2026</span><span class="meta-sep">·</span><span>13 min</span>
+      </div>
+      <a href="#" class="article-link"><span class="al-prompt">$</span> read article</a>
+    </article>
+
+    <article class="article-card" data-topic="cloud">
+      <p class="article-tag">Cloud</p>
+      <h3>The IAM misconfig we find in almost every cloud assessment</h3>
+      <p class="article-excerpt">It's not the exotic privilege escalation chain. It's a wildcard resource policy someone meant to scope down before launch.</p>
+      <div class="article-meta">
+        <span>Aug 10, 2026</span><span class="meta-sep">·</span><span>6 min</span>
+      </div>
+      <a href="#" class="article-link"><span class="al-prompt">$</span> read article</a>
+    </article>
+
+    <article class="article-card" data-topic="tools">
+      <p class="article-tag">Tools</p>
+      <h3>Our current enumeration stack, and what we retired this year</h3>
+      <p class="article-excerpt">Two tools we dropped, three we added, and the one shell script that's quietly outlasted everything else in the kit.</p>
+      <div class="article-meta">
+        <span>Aug 6, 2026</span><span class="meta-sep">·</span><span>8 min</span>
+      </div>
+      <a href="#" class="article-link"><span class="al-prompt">$</span> read article</a>
+    </article>
+
+    <article class="article-card" data-topic="ai">
+      <p class="article-tag">AI &amp; Automation</p>
+      <h3>Prompt injection is a real finding now, not a novelty</h3>
+      <p class="article-excerpt">Clients are shipping LLM features faster than review processes can keep up. A checklist for scoping these assessments properly.</p>
+      <div class="article-meta">
+        <span>Aug 2, 2026</span><span class="meta-sep">·</span><span>10 min</span>
+      </div>
+      <a href="#" class="article-link"><span class="al-prompt">$</span> read article</a>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <p class="section-eyebrow">// about</p>
+    <div class="about-grid">
+      <span class="avatar avatar-lg" aria-hidden="true">AK</span>
+      <div>
+        <h2>About Avery</h2>
+        <p class="about-role">Penetration Tester / Red Team Operator · Austin, TX (remote-friendly)</p>
+        <p>I get paid to think like the person your defenses are built to stop. My day
+          job is running internal and external penetration tests, chasing Active
+          Directory attack paths, and testing web applications — REDLOG is where the
+          interesting parts end up once the client report's already been sent.</p>
+        <p>Outside of client work I run a home lab, keep a running list of tools that
+          actually hold up under pressure, and spend a fair amount of time turning
+          red-team findings into detections — a finding nobody can detect next time
+          isn't worth much.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="skills" id="skills">
+  <div class="skills-inner">
+    <p class="section-eyebrow">// skills</p>
+    <h2>What I actually use</h2>
+    <p class="section-lede">Core areas built through paid engagements, not just certification study guides.</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Active Directory</h3>
+        <p>Kerberoasting, ACL abuse, delegation attacks, Pass-the-Hash, BloodHound-driven attack paths.</p>
+        <div class="tag-row"><span class="tag-chip">BloodHound</span><span class="tag-chip">NetExec</span><span class="tag-chip">Certipy</span></div>
+      </div>
+      <div class="skill-card">
+        <h3>Web Exploitation</h3>
+        <p>Auth &amp; access control, SQL injection, XSS, SSRF, file upload and API security testing.</p>
+        <div class="tag-row"><span class="tag-chip">Burp Suite</span><span class="tag-chip">SQLMap</span><span class="tag-chip">FFUF</span></div>
+      </div>
+      <div class="skill-card">
+        <h3>Cloud Security</h3>
+        <p>IAM misconfiguration review, cloud attack surface mapping, hardening baselines.</p>
+        <div class="tag-row"><span class="tag-chip">AWS</span><span class="tag-chip">Azure AD</span><span class="tag-chip">Terraform</span></div>
+      </div>
+      <div class="skill-card">
+        <h3>Detection Evasion</h3>
+        <p>AV/EDR evasion concepts, C2 tradecraft, and reading logs from the other side.</p>
+        <div class="tag-row"><span class="tag-chip">Sigma</span><span class="tag-chip">Elastic</span><span class="tag-chip">Wireshark</span></div>
+      </div>
+      <div class="skill-card">
+        <h3>Scripting</h3>
+        <p>Tooling for repeatable enumeration, exploitation, and reporting workflows.</p>
+        <div class="tag-row"><span class="tag-chip">Python</span><span class="tag-chip">Bash</span><span class="tag-chip">Go</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="experience" id="experience">
+  <div class="experience-inner">
+    <p class="section-eyebrow">// experience</p>
+    <h2>Where the work's been</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <p class="timeline-date">2023 — Present</p>
+        <h3>Senior Pentester</h3>
+        <p class="timeline-org">Northbeam Security · Full-time</p>
+        <p>Internal and external network &amp; AD assessments, client-facing reporting,
+          and detection rules built directly from red-team findings.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-date">2022</p>
+        <h3>Red Team Trainee</h3>
+        <p class="timeline-org">Redline Labs · 6-month program</p>
+        <p>Hands-on offensive exercises across AD, web exploitation, and attack/defend
+          drills, mentored by working operators.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-date">2021</p>
+        <h3>Independent Researcher</h3>
+        <p class="timeline-org">Home-lab AD environments &amp; public CTFs</p>
+        <p>Early methodology notes that later became the basis for REDLOG's writeups.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="projects" id="projects">
+  <div class="projects-inner">
+    <p class="section-eyebrow">// projects</p>
+    <h2>Technical projects</h2>
+    <p class="section-lede">A few things built between engagements — the kind I can explain and defend in an interview.</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <p class="project-eyebrow">Lab · Active Directory</p>
+        <h3>AD home lab</h3>
+        <p>A controlled Windows domain for practicing credential access, lateral movement, and BloodHound enumeration.</p>
+        <div class="tag-row"><span class="tag-chip">BloodHound</span><span class="tag-chip">Windows Server</span><span class="tag-chip">VMware</span></div>
+        <a href="#" class="article-link"><span class="al-prompt">$</span> view on GitHub</a>
+      </div>
+      <div class="project-card">
+        <p class="project-eyebrow">Methodology</p>
+        <h3>Pentest methodology notes</h3>
+        <p>Structured notes covering recon, exploitation, credential access, privilege escalation, and reporting.</p>
+        <div class="tag-row"><span class="tag-chip">AD</span><span class="tag-chip">Web</span><span class="tag-chip">Linux</span></div>
+        <a href="#" class="article-link"><span class="al-prompt">$</span> view on GitHub</a>
+      </div>
+      <div class="project-card">
+        <p class="project-eyebrow">Research</p>
+        <h3>Detection engineering notebook</h3>
+        <p>Mapping offensive techniques to Sigma detection rules, from both attacker and defender perspectives.</p>
+        <div class="tag-row"><span class="tag-chip">Sigma</span><span class="tag-chip">Elastic</span><span class="tag-chip">MITRE ATT&amp;CK</span></div>
+        <a href="#" class="article-link"><span class="al-prompt">$</span> view on GitHub</a>
+      </div>
+      <div class="project-card">
+        <p class="project-eyebrow">Tooling · Python</p>
+        <h3>Automation toolkit</h3>
+        <p>Command-line utilities for authentication testing and repetitive enumeration tasks.</p>
+        <div class="tag-row"><span class="tag-chip">Python</span><span class="tag-chip">HTTP</span><span class="tag-chip">Automation</span></div>
+        <a href="#" class="article-link"><span class="al-prompt">$</span> view on GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CERTIFICATIONS ============ -->
+<section class="certs" id="certs">
+  <div class="certs-inner">
+    <p class="section-eyebrow">// certifications</p>
+    <h2>Training &amp; credentials</h2>
+    <p class="section-lede">Hover the badges below to scrub through them — leave them alone and they drift by on their own. Click one to see it on Credly.</p>
+
+    <div id="certBadgeMount" class="cert-badge-mount"></div>
+
+    <ul class="cert-list">
+      <li><span class="status-done">[DONE]</span> Web Exploitation Track</li>
+      <li><span class="status-prog">[PROG]</span> Red Team Operator Program</li>
+      <li><span class="status-done">[DONE]</span> Cloud Pentest Foundations</li>
+      <li><span class="status-done">[DONE]</span> Practical Offensive Security — Full Course</li>
+      <li><span class="status-done">[DONE]</span> Detection Engineering — SIEM &amp; Threat Hunting</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <p class="section-eyebrow">// contact</p>
+    <h2>Get in touch</h2>
+    <p class="section-lede">Open to red team and pentest engagements, plus the occasional guest writeup.</p>
+    <div class="contact-row">
+      <a class="btn btn-primary" href="mailto:avery@redlog.io">Email me</a>
+      <div class="contact-links">
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="#certs">Credly profile</a>
+      </div>
+    </div>
+    <p class="contact-pgp">PGP&nbsp; 4A3F 9C21 8B0D 77E4 12FA&nbsp; 9931 0CDE 55A2 66F1 90B3</p>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="newsletter" id="subscribe">
+  <div class="newsletter-inner">
+    <div>
+      <h2>Get red team research in your inbox</h2>
+      <p>One email a week. No vendor pitches, no growth-hacking, unsubscribe whenever.</p>
+    </div>
+    <form class="newsletter-form" onsubmit="return false;">
+      <input type="email" placeholder="you@company.com" aria-label="Email address" required>
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#top" class="brand"><span class="brand-mark">&gt;_</span><span class="brand-text">REDLOG</span></a>
+      <p>Field notes from people who break things for a living. Independent, ad-free, no sponsored findings.</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-heading">Read</p>
+      <a href="#articles">Latest articles</a>
+      <a href="#topics">Topics</a>
+      <a href="#">Archive</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-heading">Redlog</p>
+      <a href="#about">About</a>
+      <a href="#subscribe">Subscribe</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-heading">Elsewhere</p>
+      <a href="#">GitHub</a>
+      <a href="#">Mastodon</a>
+      <a href="#">RSS</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 REDLOG. All findings redacted until disclosure.</p>
+    <p class="footer-exit"><span class="th-prompt">kali@kali</span><span class="th-sep">:</span><span class="th-path">~</span><span class="th-dollar">$</span> exit</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
