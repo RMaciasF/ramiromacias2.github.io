@@ -41,11 +41,11 @@ for (let i = 0; i < topicPills.length; i++) {
 // Certification badges — sliding marquee, hover-to-scrub
 // ============================================================
 const CERTS = [
-  { acronym: 'WX-1',  name: 'Web Exploitation Track', status: 'done', image: 'badges/wx1.svg',
-    url: 'https://www.credly.com/badges/00000000-0000-0000-0000-000000000001' },
-  { acronym: 'RTOP',  name: 'Red Team Operator Program', status: 'in-progress', image: 'badges/rtop.svg',
+  { acronym: 'A+',  name: 'CompTIA A+', status: 'done', image: 'badges/A+.png',
+    url: 'https://www.credly.com/badges/0e99e77c-e457-415a-ab83-3a55c8a07719' },
+  { acronym: 'CCNA',  name: 'Comptia Certified Network Associate', status: 'in-progress', image: 'badges/CCNA.png',
     url: '' },
-  { acronym: 'CSF',   name: 'Cloud Pentest Foundations', status: 'done', image: 'badges/csf.svg',
+  { acronym: 'eJPT',   name: 'INE eJPT', status: 'done', image: 'badges/eJPT.svg',
     url: 'https://www.credly.com/badges/00000000-0000-0000-0000-000000000002' },
   { acronym: 'POS',   name: 'Practical Offensive Security — Full Course', status: 'done', image: 'badges/pos.svg',
     url: 'https://www.credly.com/badges/00000000-0000-0000-0000-000000000003' },
