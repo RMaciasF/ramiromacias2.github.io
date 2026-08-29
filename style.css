@@ -54,7 +54,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; letter-spacing:
   border-radius: 2px;
 }
 
-.nav-inner, .hero-inner, .topics-inner, .articles-inner, .newsletter-inner, .footer-inner {
+.nav-inner, .hero-inner, .topics-inner, .articles-inner, .footer-inner {
   max-width: var(--max-w);
   margin-inline: auto;
   padding-inline: 24px;
@@ -452,9 +452,6 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; letter-spacing:
 .article-link:hover { color: var(--green); }
 
 /* =========================================================
-   Newsletter
-   ========================================================= */
-/* =========================================================
    Shared section header bits
    ========================================================= */
 .section-eyebrow {
@@ -783,37 +780,6 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; letter-spacing:
   color: var(--text-dim);
 }
 
-.newsletter { padding-block: 20px 80px; }
-
-.newsletter-inner {
-  background: var(--panel);
-  border: 1px solid var(--green-dim);
-  border-radius: var(--radius);
-  padding: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-  flex-wrap: wrap;
-}
-
-.newsletter-inner h2 { font-size: 1.4rem; margin-bottom: 8px; }
-.newsletter-inner p { color: var(--text-muted); font-size: 0.92rem; }
-
-.newsletter-form { display: flex; gap: 10px; flex-wrap: wrap; }
-
-.newsletter-form input {
-  font-family: var(--font-body);
-  font-size: 14px;
-  background: var(--panel-2);
-  border: 1px solid var(--hairline);
-  color: var(--text);
-  padding: 11px 16px;
-  border-radius: 7px;
-  min-width: 220px;
-}
-.newsletter-form input:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
-
 /* =========================================================
    Footer
    ========================================================= */
@@ -872,7 +838,6 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; letter-spacing:
 @media (max-width: 720px) {
   .nav-links { display: none; }
   .nav-toggle { display: flex; }
-  .nav-cta { display: none; }
   .nav.open .nav-links {
     display: flex;
     position: absolute;
@@ -887,7 +852,6 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; letter-spacing:
   .articles-inner { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
-  .newsletter-inner { flex-direction: column; align-items: flex-start; }
 }
 
 @media (max-width: 480px) {
