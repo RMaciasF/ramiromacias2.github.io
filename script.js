@@ -49,7 +49,7 @@ const CERTS = [
     url: 'https://certs.ine.com/71c5d2aa-9503-46b1-829b-a6307f0f7067#acc.IAZ246Kn' },
    { acronym: 'CySA+',  name: 'CompTIA CySA+', status: 'done', image: 'badges/CySA+.png',
     url: 'https://www.credly.com/badges/1a16b760-e1b2-418c-8756-26edb78af781' },
-   { acronym: 'OSCP',  name: 'Offsec Certified Professional', status: 'done', image: 'badges/OSCP.png',
+   { acronym: 'OSCP',  name: 'Offsec Certified Professional', status: 'in-progress', image: 'badges/OSCP.png',
     url: 'https://www.credly.com/badges/0e99e77c-e457-415a-ab83-3a55c8a07719' },
    { acronym: 'Pentest+',  name: 'CompTIA Pentest+', status: 'done', image: 'badges/Pentest+.png',
     url: 'https://www.credly.com/badges/4a4a39b2-53d4-452e-934f-eae9ca1048ca' },
