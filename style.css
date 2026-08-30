@@ -757,7 +757,19 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; letter-spacing:
   font-size: 12px;
 }
 .status-done { color: var(--green); }
-.status-prog { color: var(--red); }
+
+.status-prog {
+  color: var(--red);
+  animation: prog-flicker 2.6s ease-in-out infinite;
+}
+
+@keyframes prog-flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+  52% { opacity: 0.85; }
+  54% { opacity: 0.5; }
+  57% { opacity: 1; }
+}
 
 /* =========================================================
    Contact
